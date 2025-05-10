@@ -8,106 +8,159 @@
 		.shooter {
 			width: 80px; 
 			position: absolute;
-			left: 800px;
+			left: 500px;
+			user-select: none;
 		}
+
+		.sun {
+			width: 80px; 
+			position: absolute;
+			left: 600px;
+			user-select: none;
+			user-select: none;
+		}
+
 		.box {
-			background-image: url(game.png);
+			background-image: url(img/game.png);
 			height: 1000px; 
 			background-size: 100% 100%;
 		}
 		.zombies {
 			width: 80px; 
 			position: absolute;
-			left: 2000px;
+			left: 1200px;
 			transition: 0.5s;
+			user-select: none;
 		}
 	</style>
 </head>
 <body>	
 	
-	<div class="box" style="">
+	<div class="box">
 		
-		<h5 style="position: absolute; left: 1050px; top: 50px">Твои очки: <span class="score">0</span></h5>
+		<h5 style="position: absolute; left: 620px; top: 50px; color: white; user-select: none;">Твои очки: <span class="score">0</span></h5>
 
-		<!--ГОРОХИ-->
-	    <img class="shooter" src="peashooter.png"  style="top: 250px;">		
-		<img class="shooter" src="peashooter.png"  style="top: 350px;">	
-		<img class="shooter" src="peashooter.png"  style="top: 450px;">	
-		<img class="shooter" src="peashooter.png"  style="top: 550px;">
-		<img class="shooter" src="peashooter.png"  style="top: 650px;">
+	    <img class="shooter" src="img/peashooter.png"  style="top: 250px;">		
+		<img class="shooter" src="img/peashooter.png"  style="top: 350px;">	
+		<img class="shooter" src="img/peashooter.png"  style="top: 450px;">	
+		<img class="shooter" src="img/peashooter.png"  style="top: 550px;">
+		<img class="shooter" src="img/peashooter.png"  style="top: 650px;">
+
+		<img class="sun" src="img/podsolnyx.webp"  style="top: 250px;">		
+		<img class="sun" src="img/podsolnyx.webp"  style="top: 350px;">	
+		<img class="sun" src="img/podsolnyx.webp"  style="top: 450px;">	
+		<img class="sun" src="img/podsolnyx.webp"  style="top: 550px;">	
+		<img class="sun" src="img/podsolnyx.webp"  style="top: 650px;">	
 
 
-		<!--ЗОМБИ-->
-		<img class="zombies" src="zombie1.png" style="top: 220px">
-		<img class="zombies" src="zombie2.png" style="top: 320px">
-		<img class="zombies" src="zombie2.png" style="top: 420px">
-		<img class="zombies" src="zombie4.png" style="top: 520px">
-		<img class="zombies" src="zombie4.png" style="top: 620px">
+		<img class="zombies" src="img/zombie1.png" style="top: 220px">
+		<img class="zombies" src="img/zombie2.png" style="top: 320px">
+		<img class="zombies" src="img/zombie2.png" style="top: 420px">
+		<img class="zombies" src="img/zombie4.png" style="top: 520px">
+		<img class="zombies" src="img/zombie4.png" style="top: 620px">
 	</div>
 <script>
 	                                         
 
 
 		let shooter = document.querySelectorAll(".shooter");
+		let sun = document.querySelectorAll('.sun');
 		let zombies	 = document.querySelectorAll(".zombies");
-        let score = document.querySelectorAll(".score");
 
-		let zombiesLeft = 2000;
-		let zombiesLeft1 = 2000;
-		let zombiesLeft2 = 2000;
-		let zombiesLeft3 = 2000;
-		let zombiesLeft4 = 2000;
-		let zero = 0;
+		let zombiesLeft = 1200;
+		let zombiesLeft1 = 1200;
+		let zombiesLeft2 = 1200;
+		let zombiesLeft3 = 1200;
+		let zombiesLeft4 = 1200;
+		let offset = 0;
 
 			zombies[0].onclick = function() {
-			zombiesLeft = zombiesLeft - 200;
+			zombiesLeft = zombiesLeft - 100;
 			zombies[0].style.left = zombiesLeft + "px";
 
-			if(zombiesLeft === 800){
+			if(zombiesLeft === 500){
 				alert("Съеден");
 				shooter[0].style.display = "none";
-				zero =zero + 1;
-				score.innerHTML = zero;
+				offset += 1;
+				document.querySelector('.score').innerHTML = offset;
+			}
+			if(zombiesLeft === 600){
+				alert("Съеден");
+				sun[0].style.display = "none";
+				offset += 1;
+				document.querySelector('.score').innerHTML = offset;
 			}
 		}
 
 		zombies[1].onclick = function() {
-			zombiesLeft1 = zombiesLeft1 - 200;
+			zombiesLeft1 = zombiesLeft1 - 100;
 			zombies[1].style.left = zombiesLeft1 + "px";
 
-			if(zombiesLeft1 === 800){
+			if(zombiesLeft1 === 500){
 				alert("Съеден");
 				shooter[1].style.display = "none";
+				offset += 1;
+				document.querySelector('.score').innerHTML = offset;
+			}
+			if(zombiesLeft1 === 600){
+				alert("Съеден");
+				sun[1].style.display = "none";
+				offset += 1;
+				document.querySelector('.score').innerHTML = offset;
 			}
 		}
 
 		zombies[2].onclick = function() {
-			zombiesLeft2 = zombiesLeft2 - 200;
+			zombiesLeft2 = zombiesLeft2 - 100;
 			zombies[2].style.left = zombiesLeft2 + "px";
 
-			if(zombiesLeft === 800){
+			if(zombiesLeft2 === 500){
 				alert("Съеден");
 				shooter[2].style.display = "none";
+				offset += 1;
+				document.querySelector('.score').innerHTML = offset;
+			}
+			if(zombiesLeft2 === 600){
+				alert("Съеден");
+				sun[2].style.display = "none";
+				offset += 1;
+				document.querySelector('.score').innerHTML = offset;
 			}
 		}
 
 		zombies[3].onclick = function() {
-			zombiesLeft2 = zombiesLeft2 - 200;
-			zombies[3].style.left = zombiesLeft2 + "px";
+			zombiesLeft3 = zombiesLeft3 - 100;
+			zombies[3].style.left = zombiesLeft3 + "px";
 
-			if(zombiesLeft === 800){
+			if(zombiesLeft3 === 500){
 				alert("Съеден");
 				shooter[3].style.display = "none";
+				offset += 1;
+				document.querySelector('.score').innerHTML = offset;
+			}
+			if(zombiesLeft3 === 600){
+				alert("Съеден");
+				sun[3].style.display = "none";
+				offset += 1;
+				document.querySelector('.score').innerHTML = offset;
 			}
 		}
 
 		zombies[4].onclick = function() {
-			zombiesLeft3 = zombiesLeft3 - 200;
-			zombies[4].style.left = zombiesLeft3 + "px";
+			zombiesLeft4 = zombiesLeft4 - 100;
+			zombies[4].style.left = zombiesLeft4 + "px";
 
-			if(zombiesLeft === 800){
+			if(zombiesLeft4 === 500){
 				alert("Съеден");
 				shooter[4].style.display = "none";
+				offset += 1;
+				document.querySelector('.score').innerHTML = offset;
+			}
+			if(zombiesLeft4 === 600){
+				alert("Съеден");
+				sun[4].style.display = "none";
+				offset += 1;
+				document.querySelector('.score').innerHTML = offset;
 			}
 		}
 
