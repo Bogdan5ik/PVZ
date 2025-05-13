@@ -1,0 +1,28 @@
+.peas {
+    width: 60px; 
+    position: absolute; 
+}
+
+.zombies {
+    width: 50px;
+    position: absolute;
+    transition: 0.5s;
+}
+
+.button {
+    position: absolute;
+    left: 530px;
+    top: 30px;
+}
+
+.button2 {
+    position: absolute;
+    left: 330px;
+    top: 30px;
+}
+
+.sunflower {
+    position: absolute;
+    width: 50px;
+    display: none;
+}
